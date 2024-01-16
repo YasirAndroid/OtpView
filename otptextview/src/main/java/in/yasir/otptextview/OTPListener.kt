@@ -1,4 +1,4 @@
-package `in`.aabhasjindal.otptextview
+package `in`.yasir.otptextview
 
 interface OTPListener {
     /**

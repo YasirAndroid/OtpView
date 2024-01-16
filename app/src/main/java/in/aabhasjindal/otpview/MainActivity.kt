@@ -1,7 +1,7 @@
 package `in`.aabhasjindal.otpview
 
-import `in`.aabhasjindal.otptextview.OTPListener
-import `in`.aabhasjindal.otptextview.OtpTextView
+import `in`.yasir.otptextview.OTPListener
+import `in`.yasir.otptextview.OtpTextView
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager

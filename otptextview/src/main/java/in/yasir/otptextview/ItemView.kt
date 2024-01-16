@@ -1,4 +1,4 @@
-package `in`.aabhasjindal.otptextview
+package `in`.yasir.otptextview
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import `in`.aabhasjindal.otptextview.R
 
 class ItemView : FrameLayout {
 
@@ -50,15 +51,24 @@ class ItemView : FrameLayout {
     private fun generateViews(styles: TypedArray) {
         val defaultHeight = Utils.getPixels(context, DEFAULT_BAR_HEIGHT).toFloat()
         val defaultOtpTextSize = Utils.getPixels(context, DEFAULT_OTP_TEXT_SIZE).toFloat()
-        val textColor = styles.getColor(R.styleable.OtpTextView_android_textColor, ResourcesCompat.getColor(context.resources, R.color.black, null))
+        val textColor = styles.getColor(
+            R.styleable.OtpTextView_android_textColor, ResourcesCompat.getColor(context.resources,
+                R.color.black, null))
         val barHeight = styles.getDimension(R.styleable.OtpTextView_bar_height, defaultHeight)
-        val barMargin = styles.getDimension(R.styleable.OtpTextView_bar_margin, Utils.getPixels(context, 0).toFloat())
+        val barMargin = styles.getDimension(
+            R.styleable.OtpTextView_bar_margin, Utils.getPixels(
+                context,
+                0
+            ).toFloat())
         var barMarginBottom = styles.getDimension(R.styleable.OtpTextView_bar_margin_bottom, DEFAULT_BAR_MARGIN.toFloat())
         var barMarginRight = styles.getDimension(R.styleable.OtpTextView_bar_margin_right, DEFAULT_BAR_MARGIN.toFloat())
         var barMarginLeft = styles.getDimension(R.styleable.OtpTextView_bar_margin_left, DEFAULT_BAR_MARGIN.toFloat())
         var barMarginTop = styles.getDimension(R.styleable.OtpTextView_bar_margin_top, DEFAULT_BAR_MARGIN.toFloat())
         hideOTP = styles.getBoolean(R.styleable.OtpTextView_hide_otp, false)
-        hideOTPDrawable = styles.getResourceId(R.styleable.OtpTextView_hide_otp_drawable, R.drawable.bg_pin)
+        hideOTPDrawable = styles.getResourceId(
+            R.styleable.OtpTextView_hide_otp_drawable,
+            R.drawable.bg_pin
+        )
 
         defaultOTPDrawable = ResourcesCompat.getColor(context.resources, R.color.transparent, null)
 
@@ -67,15 +77,25 @@ class ItemView : FrameLayout {
         val otpTextSize = styles.getDimension(R.styleable.OtpTextView_otp_text_size, defaultOtpTextSize)
 
         val otpTextTypeFace = styles.getString(R.styleable.OtpTextView_text_typeface)
-        val boxBackgroundColor = styles.getResourceId(R.styleable.OtpTextView_otp_box_background, ResourcesCompat.getColor(context.resources, R.color.transparent, null))
+        val boxBackgroundColor = styles.getResourceId(
+            R.styleable.OtpTextView_otp_box_background, ResourcesCompat.getColor(context.resources,
+                R.color.transparent, null))
         boxBackgroundColorActive = styles.getResourceId(R.styleable.OtpTextView_otp_box_background_active, boxBackgroundColor)
         boxBackgroundColorInactive = styles.getResourceId(R.styleable.OtpTextView_otp_box_background_inactive, boxBackgroundColor)
         boxBackgroundColorSuccess = styles.getResourceId(R.styleable.OtpTextView_otp_box_background_success, boxBackgroundColor)
         boxBackgroundColorError = styles.getResourceId(R.styleable.OtpTextView_otp_box_background_error, boxBackgroundColor)
-        barActiveColor = styles.getColor(R.styleable.OtpTextView_bar_active_color, ResourcesCompat.getColor(context.resources, R.color.black, null))
-        barInactiveColor = styles.getColor(R.styleable.OtpTextView_bar_inactive_color, ResourcesCompat.getColor(context.resources, R.color.grey, null))
-        barErrorColor = styles.getColor(R.styleable.OtpTextView_bar_error_color, ResourcesCompat.getColor(context.resources, R.color.red, null))
-        barSuccessColor = styles.getColor(R.styleable.OtpTextView_bar_success_color, ResourcesCompat.getColor(context.resources, R.color.black, null))
+        barActiveColor = styles.getColor(
+            R.styleable.OtpTextView_bar_active_color, ResourcesCompat.getColor(context.resources,
+                R.color.black, null))
+        barInactiveColor = styles.getColor(
+            R.styleable.OtpTextView_bar_inactive_color, ResourcesCompat.getColor(context.resources,
+                R.color.grey, null))
+        barErrorColor = styles.getColor(
+            R.styleable.OtpTextView_bar_error_color, ResourcesCompat.getColor(context.resources,
+                R.color.red, null))
+        barSuccessColor = styles.getColor(
+            R.styleable.OtpTextView_bar_success_color, ResourcesCompat.getColor(context.resources,
+                R.color.black, null))
 
         this.setBackgroundResource(boxBackgroundColor)
 

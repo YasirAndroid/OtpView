@@ -1,4 +1,4 @@
-package `in`.aabhasjindal.otptextview
+package `in`.yasir.otptextview
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,6 +11,7 @@ import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import `in`.aabhasjindal.otptextview.R
 import java.util.*
 import java.util.regex.Pattern
 
@@ -26,7 +27,8 @@ class OtpTextView : FrameLayout {
         get() = InputFilter { source, start, end, _, _, _ ->
             for (i in start until end) {
                 if (!Pattern.compile(
-                                PATTERN)
+                                PATTERN
+                    )
                                 .matcher(source[i].toString())
                                 .matches()) {
                     return@InputFilter ""
@@ -65,13 +67,41 @@ class OtpTextView : FrameLayout {
         itemViews = ArrayList()
         if (length > 0) {
             val otp = styles.getString(R.styleable.OtpTextView_otp)
-            val width = styles.getDimension(R.styleable.OtpTextView_width, Utils.getPixels(context, DEFAULT_WIDTH).toFloat()).toInt()
-            val height = styles.getDimension(R.styleable.OtpTextView_height, Utils.getPixels(context, DEFAULT_HEIGHT).toFloat()).toInt()
-            val space = styles.getDimension(R.styleable.OtpTextView_box_margin, Utils.getPixels(context, DEFAULT_SPACE).toFloat()).toInt()
-            val spaceLeft = styles.getDimension(R.styleable.OtpTextView_box_margin_left, Utils.getPixels(context, DEFAULT_SPACE_LEFT).toFloat()).toInt()
-            val spaceRight = styles.getDimension(R.styleable.OtpTextView_box_margin_right, Utils.getPixels(context, DEFAULT_SPACE_RIGHT).toFloat()).toInt()
-            val spaceTop = styles.getDimension(R.styleable.OtpTextView_box_margin_top, Utils.getPixels(context, DEFAULT_SPACE_TOP).toFloat()).toInt()
-            val spaceBottom = styles.getDimension(R.styleable.OtpTextView_box_margin_bottom, Utils.getPixels(context, DEFAULT_SPACE_BOTTOM).toFloat()).toInt()
+            val width = styles.getDimension(
+                R.styleable.OtpTextView_width, Utils.getPixels(
+                    context,
+                    DEFAULT_WIDTH
+                ).toFloat()).toInt()
+            val height = styles.getDimension(
+                R.styleable.OtpTextView_height, Utils.getPixels(
+                    context,
+                    DEFAULT_HEIGHT
+                ).toFloat()).toInt()
+            val space = styles.getDimension(
+                R.styleable.OtpTextView_box_margin, Utils.getPixels(
+                    context,
+                    DEFAULT_SPACE
+                ).toFloat()).toInt()
+            val spaceLeft = styles.getDimension(
+                R.styleable.OtpTextView_box_margin_left, Utils.getPixels(
+                    context,
+                    DEFAULT_SPACE_LEFT
+                ).toFloat()).toInt()
+            val spaceRight = styles.getDimension(
+                R.styleable.OtpTextView_box_margin_right, Utils.getPixels(
+                    context,
+                    DEFAULT_SPACE_RIGHT
+                ).toFloat()).toInt()
+            val spaceTop = styles.getDimension(
+                R.styleable.OtpTextView_box_margin_top, Utils.getPixels(
+                    context,
+                    DEFAULT_SPACE_TOP
+                ).toFloat()).toInt()
+            val spaceBottom = styles.getDimension(
+                R.styleable.OtpTextView_box_margin_bottom, Utils.getPixels(
+                    context,
+                    DEFAULT_SPACE_BOTTOM
+                ).toFloat()).toInt()
             val otpMatchParent = styles.getBoolean(R.styleable.OtpTextView_otp_box_match_parent, false)
             val params = if (otpMatchParent) LinearLayout.LayoutParams(width, height, 1f)
             else LinearLayout.LayoutParams(width, height)
@@ -242,6 +272,6 @@ class OtpTextView : FrameLayout {
         private const val DEFAULT_SPACE_TOP = 4
         private const val DEFAULT_SPACE_BOTTOM = 4
 
-        private const val PATTERN = "[A-Za-z]*"
+        private const val PATTERN = "[1234567890]*"
     }
 }

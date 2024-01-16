@@ -1,4 +1,4 @@
-package `in`.aabhasjindal.otptextview
+package `in`.yasir.otptextview
 
 import android.content.Context
 import android.util.TypedValue
