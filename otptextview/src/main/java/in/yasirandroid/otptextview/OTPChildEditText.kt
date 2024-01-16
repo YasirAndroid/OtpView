@@ -1,9 +1,9 @@
-package `in`.yasir.otptextview
+package `in`.yasirandroid.otptextview
 
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
-import `in`.aabhasjindal.otptextview.R
+import `in`.yasirandroid.otptextview.R
 
 internal class OTPChildEditText : androidx.appcompat.widget.AppCompatEditText {
 

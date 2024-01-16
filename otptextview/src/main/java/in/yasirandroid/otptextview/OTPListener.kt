@@ -1,4 +1,4 @@
-package `in`.yasir.otptextview
+package `in`.yasirandroid.otptextview
 
 interface OTPListener {
     /**

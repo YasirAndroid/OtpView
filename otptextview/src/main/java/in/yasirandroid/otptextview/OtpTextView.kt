@@ -1,4 +1,4 @@
-package `in`.yasir.otptextview
+package `in`.yasirandroid.otptextview
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,7 +11,7 @@ import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import `in`.aabhasjindal.otptextview.R
+import `in`.yasirandroid.otptextview.R
 import java.util.*
 import java.util.regex.Pattern
 

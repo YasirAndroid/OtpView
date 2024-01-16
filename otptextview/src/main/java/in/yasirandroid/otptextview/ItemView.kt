@@ -1,4 +1,4 @@
-package `in`.yasir.otptextview
+package `in`.yasirandroid.otptextview
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
-import `in`.aabhasjindal.otptextview.R
+import `in`.yasirandroid.otptextview.R
 
 class ItemView : FrameLayout {
 
