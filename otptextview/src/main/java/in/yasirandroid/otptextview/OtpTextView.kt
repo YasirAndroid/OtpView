@@ -114,7 +114,7 @@ class OtpTextView : FrameLayout {
             val editTextLayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             editTextLayoutParams.gravity = Gravity.CENTER
             otpChildEditText = OTPChildEditText(context)
-            otpChildEditText?.filters = arrayOf(filter, InputFilter.LengthFilter(length))
+            otpChildEditText?.filters = arrayOf(filter, InputFilter.LengthFilter(length), InputFilter.AllCaps())
             setTextWatcher(otpChildEditText)
             setFocusDetection(otpChildEditText)
             addView(otpChildEditText, editTextLayoutParams)
